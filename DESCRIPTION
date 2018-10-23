@@ -1,0 +1,17 @@
+Package: PhenGenCorr
+Type: Package
+Title: Phenotypic, Genotypic and Environmental Correlations from Multi Environment Trials
+Version: 0.1.0
+Author: Sam Dumble
+Maintainer: Sam Dumble <s.dumble@stats4sd.org>
+Description: Calculations of genotypic, phenotypic and environmental correlations from multi environment trials in command line
+Depends: R (>= 3.3.1)
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+Imports:
+   	lme4 (>= 1.1-18-1),
+    	reshape2 (>= 1.4.3),
+    	agridat (>= 1.16),
+	agricolae (>= 1.2-8)
+RoxygenNote: 6.1.0.9000
