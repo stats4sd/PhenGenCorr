@@ -28,6 +28,6 @@ library(agricolae)
 data(yacon)
 yaconF150<-subset(yacon,dose=="F150")
 with(yaconF150,gencorr(genotypes=entry,environments=locality,outcomes=c("height","stalks","wfr","wff","wfk","roots","FOS","glucose",
-"fructose","brix","foliage","dry","IH"),data=yaconF0,rep=replication))
+"fructose","brix","foliage","dry","IH"),data=yaconF150,rep=replication))
 }
 \keyword{heritability}

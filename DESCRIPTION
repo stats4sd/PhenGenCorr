@@ -13,5 +13,6 @@ Imports:
    	lme4 (>= 1.1-18-1),
     	reshape2 (>= 1.4.3),
     	agridat (>= 1.16),
-	agricolae (>= 1.2-8)
+	agricolae (>= 1.2-8),
+	progress (>= 1.2.0)
 RoxygenNote: 6.1.0.9000

@@ -10,13 +10,14 @@
 #' @keywords heritability
 #' @importFrom lme4 lmer fixef
 #' @importFrom reshape2 dcast
+#' @importFrom progress progress_bar
 #' @export
 #' @examples
 #' library(agricolae)
 #' data(yacon)
 #' yaconF150<-subset(yacon,dose=="F150")
 #' with(yaconF150,gencorr(genotypes=entry,environments=locality,outcomes=c("height","stalks","wfr","wff","wfk","roots","FOS","glucose",
-#' "fructose","brix","foliage","dry","IH"),data=yaconF0,rep=replication))
+#' "fructose","brix","foliage","dry","IH"),data=yaconF150,rep=replication))
 gencorr<-function (genotypes, environments = NULL, outcomes,data, rep,block=NULL,threshold=0.05)
 {
   if(length(outcomes)>1){
