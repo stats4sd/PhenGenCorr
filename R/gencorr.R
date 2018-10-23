@@ -12,10 +12,10 @@
 #' @importFrom reshape2 dcast
 #' @export
 #' @examples
-#' library(agridat)
+#' library(agricolae)
 #' data(yacon)
-#' yaconF0<-subset(yacon,dose=="F0")
-#' with(yaconF0,gencorr(genotypes=entry,environments=locality,outcomes=c("height","stalks","wfr","wff","wfk","roots","FOS","glucose",
+#' yaconF150<-subset(yacon,dose=="F150")
+#' with(yaconF150,gencorr(genotypes=entry,environments=locality,outcomes=c("height","stalks","wfr","wff","wfk","roots","FOS","glucose",
 #' "fructose","brix","foliage","dry","IH"),data=yaconF0,rep=replication))
 gencorr<-function (genotypes, environments = NULL, outcomes,data, rep,block=NULL,threshold=0.05)
 {
