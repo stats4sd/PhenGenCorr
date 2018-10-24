@@ -30,7 +30,7 @@ gencorr<-function (genotypes, environments = NULL, outcomes,data, rep,block=NULL
       data1 <- data.frame(variety = genotypes, environment = environments,
                           outcomes, rep = rep,block=block)
     }
-    OutFrame<-expand.grid(v1=outcomes,v2=outcomes)
+    OutFrame<-expand.grid(v1=colnames(outcomes),v2=colnames(outcomes))
     OutFrame$v1<-as.character(OutFrame$v1)
     OutFrame$v2<-as.character(OutFrame$v2)
     OutFrame$gencor<-NA
