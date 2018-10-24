@@ -12,9 +12,7 @@ envcorr(genotypes, environments = NULL, outcomes, data, rep,
 
 \item{environments}{vector containing environments}
 
-\item{outcomes}{vector of names of outcome variables to calculate correlation on}
-
-\item{data}{dataframe containing outcomes}
+\item{outcomes}{matrix containing outcomes}
 
 \item{rep}{vector containing reps}
 
@@ -27,7 +25,8 @@ Environmental Correlation (as implemented in META-R with error related to missin
 library(agridat)
 data(yacon)
 yaconF0<-subset(yacon,dose=="F0")
-with(yaconF0,envcorr(genotypes=entry,environments=locality,outcomes=c("height","stalks","wfr","wff","wfk","roots","FOS","glucose",
-"fructose","brix","foliage","dry","IH"),data=yaconF0,rep=replication))
+with(yaconF0,envcorr(genotypes=entry,environments=locality,
+outcomes=yaconF0[,c("height","stalks","wfr","wff","wfk","roots","FOS","glucose","fructose","brix","foliage","dry","IH")],
+rep=replication)
 }
 \keyword{heritability}

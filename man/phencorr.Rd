@@ -4,30 +4,29 @@
 \alias{phencorr}
 \title{Phenotypic Correlation}
 \usage{
-phencorr(genotypes, environments = NULL, outcomes, data, rep,
-  block = NULL)
+phencorr(genotypes, environments = NULL, outcomes, rep, block = NULL)
 }
 \arguments{
 \item{genotypes}{vector containing genotypes}
 
 \item{environments}{vector containing environments}
 
-\item{outcomes}{vector of names of outcome variables to calculate correlation on}
-
-\item{data}{dataframe containing outcomes}
+\item{outcomes}{matrix containing outcomes}
 
 \item{rep}{vector containing reps}
 
 \item{block}{vector containing blocks}
 }
 \description{
-Phenotypic Correlation (as implemented in META-R with error related to missing the reference level fixed )
+Phenotypic Correlation (as implemented in META-R with error related to
+missing the reference level fixed )
 }
 \examples{
 library(agridat)
 data(yacon)
 yaconF0<-subset(yacon,dose=="F0")
-with(yaconF0,phencorr(genotypes=entry,environments=locality,outcomes=c("height","stalks","wfr","wff","wfk","roots","FOS","glucose",
-"fructose","brix","foliage","dry","IH"),data=yaconF0,rep=replication))
+with(yaconF0,phencorr(genotypes=entry,environments=locality,
+outcomes=yaconF0[,c("height","stalks","wfr","wff","wfk","roots","FOS","glucose","fructose","brix","foliage","dry","IH")],
+rep=replication))
 }
 \keyword{heritability}

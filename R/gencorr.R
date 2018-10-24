@@ -16,18 +16,19 @@
 #' library(agricolae)
 #' data(yacon)
 #' yaconF150<-subset(yacon,dose=="F150")
-#' with(yaconF150,gencorr(genotypes=entry,environments=locality,outcomes=c("height","stalks","wfr","wff","wfk","roots","FOS","glucose",
-#' "fructose","brix","foliage","dry","IH"),data=yaconF150,rep=replication))
+#' with(yaconF150,gencorr(genotypes=entry,environments=locality,
+#' outcomes=yaconF150[,c("height","stalks","wfr","wff","wfk","roots","FOS","glucose","fructose","brix","foliage","dry","IH")],
+#' rep=replication)
 gencorr<-function (genotypes, environments = NULL, outcomes,data, rep,block=NULL,threshold=0.05)
 {
-  if(length(outcomes)>1){
+  if(ncol(outcomes)>1){
     if(is.null(block)){
       data1 <- data.frame(variety = factor(genotypes), environment = factor(environments),
-                          data[,outcomes], rep = rep)
+                          outcomes, rep = rep)
     }
     else{
       data1 <- data.frame(variety = genotypes, environment = environments,
-                          data[,outcomes], rep = rep,block=block)
+                          outcomes, rep = rep,block=block)
     }
     OutFrame<-expand.grid(v1=outcomes,v2=outcomes)
     OutFrame$v1<-as.character(OutFrame$v1)
@@ -63,7 +64,7 @@ if(h1$h2>threshold&h2$h2>threshold){
     gencor<-dcast(v1~v2,data=OutFrame,value.var="gencor")
     rownames(gencor)<-gencor$v1
     gencor<-gencor[,-1]
-    gencor<-gencor[outcomes,outcomes]
+    gencor<-gencor[colnames(outcomes),colnames(outcomes)]
 
     return(gencor)
   }
