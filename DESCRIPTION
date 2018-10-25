@@ -9,10 +9,5 @@ Depends: R (>= 3.3.1)
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
-Imports: 
-	lme4 (>= 1.1-18-1), 
-	reshape2 (>= 1.4.3), 
-	agridat (>= 1.16), 
-	agricolae (>= 1.2-8), 
-	progress (>= 1.2.0) 
+Imports: lme4,reshape2,agridat,agricolae,progress
 RoxygenNote: 6.1.0.9000
